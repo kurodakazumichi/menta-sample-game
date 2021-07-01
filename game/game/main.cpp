@@ -1,5 +1,9 @@
-﻿#include "Player.h"
+﻿#include <iostream>
+#include "Player.h"
 #include "Item.h"
+#include "LimitedNumber.h"
+
+using namespace std;
 
 // プレイヤーを生成してステータスを操作するサンプル
 void sample01() {
@@ -38,8 +42,58 @@ void sample02()
   delete(item);
 }
 
+// 範囲制限付き数値クラスの動作確認
+void sample03() {
+  LimitedNumber<float> num;
+
+#if _DEBUG
+  num.show();
+
+  // 最大値:0以下にならない
+  num.setMax(-100);
+  num.show();
+
+  // 最大値を設定
+  num.setMax(100);
+  num.show();
+
+  // 現在値:最小値(0)を下回らない
+  num.setNow(-1000);
+  num.show();
+
+  // 現在値:最大値を超えない
+  num.setNow(1000); // 最大値を超えない
+  num.show();
+
+  // 最大値を変更する(現在値が最大値より大きいなら、最大値に合わせられる)
+  num.setMax(50);
+  num.show();
+
+  // 最大値を元に戻す
+  num.setMax(100);
+  num.show();
+
+  // 空にする
+  num.empty();
+  num.show();
+
+  // 満タンにする
+  num.full();
+  num.show();
+
+  // 現在値を減らす
+  num.addNow(-20);
+  num.show();
+
+  // 最大値を増やす
+  num.addMax(100);
+  num.show();
+
+#endif
+}
+
 int main(void)
 {
-  sample02();
+  sample03();
   return 0;
 }
