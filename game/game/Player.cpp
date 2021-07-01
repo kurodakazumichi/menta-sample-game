@@ -38,8 +38,16 @@ void Player::setHp(float num) {
   this->hp.setNow(num);
 }
 
+void Player::setMaxAtk(float num) {
+  this->atk.setMax(num);
+}
+
 void Player::setAtk(float num) {
   this->atk.setNow(num);
+}
+
+void Player::setMaxDef(float num) {
+  this->atk.setMax(num);
 }
 
 void Player::setDef(float num) {
@@ -71,8 +79,14 @@ void Player::addMaxHp(float num) {
 void Player::addHp(float num) {
   this->hp.addNow(num);
 }
+void Player::addMaxAtk(float num) {
+  this->atk.addMax(num);
+}
 void Player::addAtk(float num) {
   this->atk.addNow(num);
+}
+void Player::addMaxDef(float num) {
+  this->def.addMax(num);
 }
 void Player::addDef(float num) {
   this->def.addNow(num);

@@ -20,7 +20,9 @@ public:
   // setter
   void setMaxHp(float num);
   void setHp(float num);
+  void setMaxAtk(float num);
   void setAtk(float num);
+  void setMaxDef(float num);
   void setDef(float num);
 
   // 全回復
@@ -32,7 +34,9 @@ public:
   // ステータス加算
   void addMaxHp(float num);
   void addHp(float num);
+  void addMaxAtk(float num);
   void addAtk(float num);
+  void addMaxDef(float num);
   void addDef(float num);
 
   // ステータスを表示

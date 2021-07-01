@@ -1,4 +1,5 @@
 ﻿#include <iostream>
+#include <vector>
 #include "Player.h"
 #include "Item.h"
 #include "LimitedNumber.h"
@@ -92,8 +93,29 @@ void sample03() {
 #endif
 }
 
+// 色んなアイテムを作って使ってみる
+void sample04() {
+  // 名前、HP、攻撃力、防御力を指定してプレイヤーを生成
+  Player* p1 = new Player("とんらん", 15, 10, 10);
+
+  // 適当にアイテムを作る
+  vector<Item*> items = vector<Item*>();
+  items.push_back(new ItemMaxHpUp());  // 最大HPアップ
+  items.push_back(new ItemPortion());  // ポーション
+  items.push_back(new ItemAtkSeed());  // 力の種
+  items.push_back(new ItemDefSeed());  // 守りの種
+  items.push_back(new ItemLvUp());     // レベルアップの実
+  items.push_back(new ItemLvUpPlus()); // レベルアップの果実
+  
+  for (int i = 0; i < items.size(); ++i) {
+    cout << items[i]->getName() << "を使った。" << endl;
+    p1->use(items[i]);
+    p1->showStatus();
+  }
+}
+
 int main(void)
 {
-  sample02();
+  sample04();
   return 0;
 }
