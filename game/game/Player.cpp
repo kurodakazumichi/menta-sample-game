@@ -6,6 +6,7 @@
 #include <random>
 #include <string>
 #include "Player.h"
+#include "Item.h"
 
 using namespace std;
 
@@ -80,6 +81,13 @@ void Player::addAtk(float num) {
 }
 void Player::addDef(float num) {
   this->setDef(this->def + num);
+}
+
+// アイテムを使う
+void Player::use(Item* item) 
+{
+  // アイテムがプレイヤーに使われる
+  item->usedBy(this);
 }
 
 // ステータスを表示
