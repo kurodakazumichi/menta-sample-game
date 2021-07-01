@@ -21,10 +21,11 @@ public:
 	{}
 
 	// 引数ありコンストラクタ
-	LimitedNumber(Number now, Number max)
-		:now(now)
-		,max(max)
-	{}
+	explicit LimitedNumber(Number now, Number max)
+	{
+		this->setMax(max);
+		this->setNow(now);
+	}
 
 	// setter, getter
 	void setMax(Number num) 
@@ -36,7 +37,7 @@ public:
 		this->setNow(this->now);
 	}
 
-	Number getMax() {
+	Number getMax() const {
 		return this->max;
 	}
 
@@ -47,7 +48,7 @@ public:
 		this->now = num;
 	}
 
-	Number getNow() {
+	Number getNow() const {
 		return this->now;
 	}
 

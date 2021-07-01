@@ -94,6 +94,6 @@ void sample03() {
 
 int main(void)
 {
-  sample03();
+  sample02();
   return 0;
 }

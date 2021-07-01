@@ -1,5 +1,6 @@
 ﻿#pragma once
 #include <string>
+#include "LimitedNumber.h"
 
 // 依存するクラス(前方宣言)
 class Item;
@@ -41,10 +42,9 @@ public:
   void use(Item* item);
 
 private:
-  int lv;           // Lv
   std::string name; // 名前
-  float hp;         // HP
-  float maxHp;      // 最大HP
-  float atk;        // 攻撃力
-  float def;        // 防御力
+  LimitedNumber<int> lv;    // Lv
+  LimitedNumber<float> hp;  // HP
+  LimitedNumber<float> atk; // 攻撃力
+  LimitedNumber<float> def; // 防御力
 };
