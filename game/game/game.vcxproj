@@ -143,6 +143,10 @@
       <SubType>
       </SubType>
     </ClCompile>
+    <ClCompile Include="ItemTable.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
     <ClCompile Include="main.cpp">
       <SubType>
       </SubType>
@@ -153,7 +157,12 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Consts.h" />
     <ClInclude Include="Item.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="ItemTable.h">
       <SubType>
       </SubType>
     </ClInclude>

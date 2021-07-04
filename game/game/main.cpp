@@ -3,6 +3,7 @@
 #include "Player.h"
 #include "Item.h"
 #include "LimitedNumber.h"
+#include "ItemTable.h"
 
 using namespace std;
 
@@ -114,8 +115,14 @@ void sample04() {
   }
 }
 
+// Itemテーブルからアイテムの情報を取得し内容を表示
+void sample05(ItemID id) {
+  ItemTable::findBy(ItemID::PORTION)->show();
+  ItemTable::findBy(ItemID::PORTION_H)->show();
+}
+
 int main(void)
 {
-  sample04();
+  sample05(ItemID::PORTION);
   return 0;
 }
