@@ -116,13 +116,13 @@ void sample04() {
 }
 
 // Itemテーブルからアイテムの情報を取得し内容を表示
-void sample05(ItemID id) {
+void sample05() {
   ItemTable::findBy(ItemID::PORTION)->show();
   ItemTable::findBy(ItemID::PORTION_H)->show();
 }
 
 int main(void)
 {
-  sample05(ItemID::PORTION);
+  sample05();
   return 0;
 }
