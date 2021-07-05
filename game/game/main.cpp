@@ -4,6 +4,7 @@
 #include "Item.h"
 #include "LimitedNumber.h"
 #include "ItemTable.h"
+#include "Bag.h"
 
 using namespace std;
 
@@ -121,8 +122,36 @@ void sample05() {
   ItemTable::findBy(ItemID::PORTION_H)->show();
 }
 
+// バッグの動作チェック
+void sample06() {
+  // アイテム用変数(後で使う)
+  Item* item = NULL;
+
+  //プレイヤーを生成
+  Player* p1 = new Player("とんらん", 15, 10, 10);
+
+  // バッグを作る(ポーション2個とハイポーション1個)
+  Bag* bag = new Bag();
+  bag->push(ItemID::PORTION);
+  bag->push(ItemID::PORTION);
+  bag->push(ItemID::PORTION_H);
+  bag->show();
+
+  // ポーションを取得する
+  item = bag->pop(ItemID::PORTION);
+
+  // アイテムが取れない事もあるのでチェックしとく
+  if (item != NULL) {
+    p1->addHp(-20);   // ダメージ与えて
+    p1->use(item);    // アイテム使って
+    p1->showStatus(); // 結果を確認
+    bag->show();
+  }
+
+}
+
 int main(void)
 {
-  sample05();
+  sample06();
   return 0;
 }

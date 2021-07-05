@@ -38,6 +38,15 @@ void ItemPortion::usedBy(Player* player) {
 }
 
 //-----------------------------------------------------------------------------
+// ポーション(体力を50回復する)
+ItemPortionH::ItemPortionH() :Item("ハイポーション")
+{}
+
+void ItemPortionH::usedBy(Player* player) {
+	player->addHp(50);
+}
+
+//-----------------------------------------------------------------------------
 // 最大HPアップ(最大HPを10上げる)
 ItemMaxHpUp::ItemMaxHpUp():Item("最大HPアップ")
 {}

@@ -139,6 +139,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Bag.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
     <ClCompile Include="Item.cpp">
       <SubType>
       </SubType>
@@ -157,6 +161,10 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Bag.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
     <ClInclude Include="Consts.h" />
     <ClInclude Include="Item.h">
       <SubType>

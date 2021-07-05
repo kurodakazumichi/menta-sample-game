@@ -33,6 +33,13 @@ public:
 	void usedBy (Player* player);
 };
 
+// アイテム:ハイポーション
+class ItemPortionH : public Item {
+public:
+	ItemPortionH();
+	void usedBy(Player* player);
+};
+
 // アイテム：最大HPアップ
 class ItemMaxHpUp : public Item {
 public:

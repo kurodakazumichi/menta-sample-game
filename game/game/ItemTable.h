@@ -3,6 +3,9 @@
 #include <map>
 #include "Consts.h"
 
+// 前方宣言
+class Item;
+
 //*****************************************************************************
 // ItemTable.h
 // Entityも一緒に定義
@@ -47,6 +50,9 @@ public:
 	// IDを元にEntityを探す
 	static ItemEntity* findBy(ItemID);
 
+	// IDを元にアイテムインスタンスを取得
+	static Item* getItem(ItemID);
+
 private:
 	// デフォルトコンストラクタをprivateにするとnew出来なくなる
 	ItemTable() {}
@@ -59,4 +65,7 @@ private:
 
 	// アイテムエンティティ(同じデータが何個もあっても意味ないのでstaticでいい)
 	static std::map<ItemID, ItemEntity*> entities;
+
+	// アイテムのインスタンス
+	static std::map<ItemID, Item*> items;
 };

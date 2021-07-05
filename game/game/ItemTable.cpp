@@ -5,7 +5,7 @@
 #include <string>
 #include "Consts.h"
 #include "ItemTable.h"
-
+#include "Item.h"
 using namespace std;
 
 //=============================================================================
@@ -47,7 +47,18 @@ map<ItemID, ItemEntity*> ItemTable::entities =
 	{ ItemID::PORTION_H, new ItemEntity(ItemID::PORTION_H, "ハイポーション", 500) }
 };
 
+// アイテムインスタンスを準備
+map<ItemID, Item*> ItemTable::items = {
+	{ ItemID::PORTION  , new ItemPortion() },
+	{ ItemID::PORTION_H, new ItemPortionH() },
+};
+
 // IDによってアイテムデータを探す
 ItemEntity* ItemTable::findBy(ItemID id) {
 	return ItemTable::entities[id];
+}
+
+// IDによってアイテムを探す
+Item* ItemTable::getItem(ItemID id) {
+	return ItemTable::items[id];
 }
